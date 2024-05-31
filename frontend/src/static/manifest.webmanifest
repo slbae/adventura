@@ -1,0 +1,26 @@
+{
+  "name": "Adventura",
+  "short_name": "Adventura",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1446c4",
+  "background_color": "#1446c4",
+  "icons": [
+    {
+      "src": "/images/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-236x256.png",
+      "sizes": "236x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-354x384.png",
+      "sizes": "354x384",
+      "type": "image/png"
+    }
+  ]
+}

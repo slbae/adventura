@@ -1,0 +1,43 @@
+services:
+  proxy:
+    image: nginx:latest
+    restart: unless-stopped
+    volumes:
+      - ./proxy/default.conf.template:/etc/nginx/templates/default.conf.template
+    ports:
+      - "80:80"
+
+  api:
+    build: ./api
+    restart: unless-stopped
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    environment:
+      - PORT=80
+    env_file:
+      - .env
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - PORT=80
+
+  database: 
+    image: mariadb:latest
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    volumes:
+      - "./database/data:/var/lib/mysql"
+      - "./database/db_schema:/docker-entrypoint-initdb.d"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    env_file:
+      - .env

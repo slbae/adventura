@@ -1,0 +1,181 @@
+body {
+    background-color: #EEE;
+    /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.activitiespage {
+    background-color: #014DA5;
+    color: white;
+}
+
+.logoutPage {
+    background-color: white;
+}
+
+/* #logout-container {
+    background-color: #014DA5;
+} */
+
+.signupPage {
+    background-color: #014DA5;
+    color: white;
+}
+
+.itinerariesPage {
+    background-color: #014DA5;
+    color: white;
+}
+
+.discover {
+    color:white;
+}
+.loginPage {
+    background-color: #014DA5;
+    color: white;
+}
+
+.createItineraryPage {
+    background-color: #014DA5;
+    color: white;
+}
+
+#createItineraryForm {
+    width: 70vw;
+}
+
+#loginForm {
+    width: 70vw;
+}
+
+#signupForm {
+    width: 70vw;
+}
+
+#logoimg {
+    width: 5vw;
+}
+
+#navbarlogo {
+    width: 2vw;
+}
+#altlink {
+ color:blue;
+ text-decoration: underline;
+}
+
+/* Makes sure there is no space between nav and background photo */
+#landing-nav {
+    margin-bottom: 0px !important;
+}
+
+#image-container {
+    background-image: url('../images/background.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 45vh;
+    width: 100vw;
+}
+
+.masthead {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    text-align: center;
+    color: #fff;
+    font-size: 4em;
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+.custom-button {
+    cursor: pointer !important;
+    color: white !important;
+    background-color: rgb(38, 44, 46) !important;
+}
+
+.masthead-heading {
+    font-size: 6rem;
+    color: #fff;
+}
+
+.masthead-subheading {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.aboutuspage {
+    background-color: whitesmoke;
+    color: black;
+    /* background-color: #014DA5;
+    color: white; */
+}
+
+#aboutus-footer {
+    color: grey;
+}
+
+#aboutus-container {
+    border-radius: 4px;
+}
+
+.form-container {
+    background-color: #014DA5;
+}
+
+#activities-button {
+    align-items: center;
+    width:20vw;
+}
+
+#form-container {
+    background-color: #014DA5;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20%;
+}
+
+#editItineraryForm {
+    width: 75%;
+}
+
+#schedule {
+    text-align: center;
+    background-color: white;
+    color: #014DA5;
+}
+#activity-search {
+    width:50vw;
+}
+#resultactivitiescontainer {
+    background-color: gray;
+}
+
+#resultactivitiescontainer {
+  
+       margin-left:0;
+       margin-right:0;
+       width:100vw;
+       border-radius:10px;
+    
+}
+.successmsgcard {
+    width:75vw;
+    height: auto; 
+}
+.successheading {
+    font-size: 3rem;
+}
+.homebtn{
+    width:40vw;
+}
+.contbtn {
+    width:40vw;
+}
+.successcheckimg {
+    width:3vw;
+}
