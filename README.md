@@ -53,9 +53,6 @@ Authentication is handled via our JWT token middleware that works with cookies. 
 ## Caching Strategy 
 The caching strategy is employed via our Service Worker. This utilizes a cache-first approach, prioritizing the speed and reliability of content delivery by pre-caching essential static assets during installation. For our dynamic content, particularly API GET requests, it defaults to cache but fetches from the network if necessary, ensuring data is served when available. The strategy includes an efficient cleanup process during activation, removing outdated caches to manage storage efficiently and prevent the data from going stale. In instances of network failure, we fallback to serving a pre-cached offline page, maintaining functionality and user interaction. 
 
-## DB Schema 
-<img src="https://github.ncsu.edu/engr-csc342/csc342-2024Spring-GroupD/blob/f407e27683d2fc244f60ecb0fd9fd5436ca72440/FinalProject/charts/ER.png">
-
 #### API Endpoints
 
 Method | Route                 | Description
