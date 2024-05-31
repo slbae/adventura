@@ -1,75 +1,61 @@
-# Adventura
-## Group D: Final Project
+# Adventura - Web Development Final Team Project
 
-What works (description of your features) and what doesn't work (any known issues)
-### Working Features: 
-<ul>
-  <li> Account Creation 
-    <ul> 
-      <li>Accounts can be created and used to login to the application.</li>
-    </ul>
-  </li>
-  <li> User Login/Authentication
-    <ul> 
-      <li>Users can login to the application with a username password pair with salts.</li>
-    </ul>
-  </li>
-  <li> Logout </li>
-  <li> Itinerary Creation
-   <ul> 
-      <li>New itineraries can be created with a city, country, start date, end date, budget, collaborator (optional) </li>
-     
-    </ul>
-  </li>
-  <li> Itinerary Edit
-    <ul> 
-      <li> Existing Itineraries of the authenticated user can be modified in the following fields: city, country, start date, end date, budget, collaborator </li>
-    </ul>
-  </li>
-  <li> Itinerary Collaborator Support
-    <ul> 
-      <li>Collaborators of an itinerary can view and modify the itineraries they have been added as collaborators to. </li>
-      <li>Collaborators can only be added successfully if the supplied username of the desired collaborator is a valid existing user. </li>
-    </ul>
-  </li>
-  <li>PWA Format
-    <ul> 
-      <li>The Full Stack appication is installable on mobile and desktop. </li>
-    </ul>
-  </li>
-  
-</ul>
+## Problem Statement: 
+This installable progressive web application (PWA) is catered towards students and young adults on a budget who want to travel during breaks. They can plan a trip by creating itineraries, searching and favoriting activities for their destination, and adding collaborators to the trip planning. This app will be more student-friendly since traveling can sometimes be intimidating by yourself, especially if you haven’t traveled very often before. 
 
-### Incomplete Features: 
-<ul>
-  <li> Itinerary Activity Add
-  <ul> 
-      <li>Activities should be able to be added to the schedule component of an itinerary </li>
-    </ul>
-  </li>
-  <li> Friends Search + Add/Remove 
-  <ul> 
-      <li>Friends should be searchable and addable/removable as friends to a user in the DB to permit them to be added as collaborators. </li>
-    </ul>
-  </li>
-  <li>
-    Note: Our team member Sean was tasked with these features but he decided to no longer contribute to the project.
-  </li>
-</ul>
+## Current Features:
+* Create user accounts, user authentication, login/logout
+* Ability to add other users to collaborate on the same trip itinerary
+* Ability to view all itineraries the current user created and is collaborating on
+* Ability to edit all itineraries the current user created and is collaborating on
+* Search functionality for relevant travel activities
+* Ability to filter activities by location
+* Ability to see the cost of each activity when planning a trip 
+* Ability to view the number of likes an activity has accumulated from all users
+* Offline/cached functionality to access the app when offline. The cached data will be available to view. Data may not be modified while the user is offline.
 
+## Future Feature Ideas:
+* Ability to add activities to the daily itinerary for a custom time frame
+* Ability to add custom activities and post them to the activities data schema
+* Ability to review activities 
+* Ability to view other users’ reviews on different activities to determine if they are worth adding to their itineraries
+* Ability to input a budget and then see trips and activities that you can afford
+* Budgeting calculator to estimate the total cost of a destination trip for the length of a given vacation
+* Weather forecaster for a destination
+* Fashion trend forecaster for a destination for the season the vacation will be in 
+* Currency conversion calculator
+* Ability to view popular tourist attractions for a given destination
+* Mobile and desktop push notifications
+* Ability to create packing lists for a trip
+* Ability to spin the globe to randomly pick a destination 
 
-## Authentication/Authorization Processes 
-Authentication is handled via our JWT token middleware that works with cookies. The authentication process utilizes JSON Web Tokens for verifying user identities, checking for tokens in browser cookies or the Authorization header. Tokens are decoded using a secret key (API_SECRET) which allows us to extract user details, serving as the basis for authorization and ensuring only authorized access to our middleware protected routes. User data and session expiry information are securely stored within the JWT. The middleware denies access and returns a 401 status if no valid token is present, ensuring security.Our token generation function involves embedding user details and an expiration time into the JWT. Token invalidation is handled by setting the cookie's expiration to a past date. These measures ensurecontrolled access to the application resources, maintaining user authentication and authorization integrity.
+## Data required:
+* Users profiles will be added as they create accounts (username, password)
+* Itineraries will be added as users make them
+* Travel restaurants/activities will be seeded with a predefined data schema
+* Costs of each activity
+* The user’s budget
+
+## Benefits of PWA Structure: 
+* While people are traveling, they can easily pull up their itineraries on-the-go on their mobile devices 
+* Mobile devices are more portable for users seeking to find nearby travel activities 
+* Users will be able to view their itineraries while offline in case they have no access to the internet or cellular data
+* Supports desktop app functionality, which will give users easy access to their accounts
+* Desktop and mobile support offers flexibility for users with specific device preferences while traveling and planning in advance.
+* The ability to run on the web browser expands the user base since it is not dependent on a particular platform/device/operating system to run. We want to cater to a broad user base without any device constraints. 
+
+## Mobile & Desktop Figma Wireframes
+View the entire wireframe at a high resolution here: https://www.figma.com/file/DMUdCdRXWjwbu4leiZnIJ2/Adventura?type=design&node-id=0%3A1&mode=design&t=RbDZga5hmWWE9EJH-1  
+
+## User Authentication/Authorization Processes 
+Authentication is handled via our JWT token middleware that works with cookies. The authentication process utilizes JSON Web Tokens for verifying user identities, checking for tokens in browser cookies or the Authorization header. Tokens are decoded using a secret key (API_SECRET) which allows us to extract user details, serving as the basis for authorization and ensuring only authorized access to our middleware protected routes. User data and session expiry information are securely stored within the JWT. The middleware denies access and returns a 401 status if no valid token is present, ensuring security. Our token generation function involves embedding user details and an expiration time into the JWT. Token invalidation is handled by setting the cookie's expiration to a past date. These security measures ensure controlled access to the application resources, maintaining user authentication and authorization integrity.
 
 ## Caching Strategy 
-The caching strategy is employed via our Service Worker. This utilizes a cache-first approach, prioritizing the speed and reliability of content delivery by pre-caching essential static assets during installation. For our dynamic content, particularly API GET requests, it defaults to cache but fetches from the network if necessary, ensuring updated data is served when available. The strategy includes an efficient cleanup process during activation, removing outdated caches to manage storage efficiently and prevent the data from going stale. In instances of network failure, we fallback to serving a pre-cached offline page, maintaining functionality and user interaction. 
-
+The caching strategy is employed via our Service Worker. This utilizes a cache-first approach, prioritizing the speed and reliability of content delivery by pre-caching essential static assets during installation. For our dynamic content, particularly API GET requests, it defaults to cache but fetches from the network if necessary, ensuring data is served when available. The strategy includes an efficient cleanup process during activation, removing outdated caches to manage storage efficiently and prevent the data from going stale. In instances of network failure, we fallback to serving a pre-cached offline page, maintaining functionality and user interaction. 
 
 ## DB Schema 
 <img src="https://github.ncsu.edu/engr-csc342/csc342-2024Spring-GroupD/blob/f407e27683d2fc244f60ecb0fd9fd5436ca72440/FinalProject/charts/ER.png">
 
-
-A list of all API endpoints with a description of their behavior. If you made changes since the previous milestone, make sure you update this table:
 #### API Endpoints
 
 Method | Route                 | Description
@@ -93,8 +79,6 @@ Method | Route                 | Description
 `GET`  | `/users/:userId/friends`        | Gets list of user's friends
 `GET`  | `activities`        | Gets all activities
 
-
-A list of all the pages in your app, how to navigate them, and the offline functionality they provide, if any:
 #### Pages
 
 * Menu- The landing page after successful login. Can directly navigate to My Itineraries, Create New Itinerary, Search Activities, Find Friends, and Logout.
@@ -105,57 +89,19 @@ A list of all the pages in your app, how to navigate them, and the offline funct
 * My Itineraries- Populates a list of the current user's itineraries. Can directly navigate to Menu, My Itineraries, Create New Itinerary, Search Activities, Find Friends, and Logout.
 * Search Activities- Has offline functionality. User can search for keywords and activities will be filtered. Can directly navigate to Menu, My Itineraries, Create New Itinerary, Find Friends, and Logout.
 
-
-Detailed individual team member contributions, including a recap of what each team member did for each milestone:
 ### Team Member Contributions
 
-#### [Kathryn Lu]
-Milestone 1:
-* API design, implementation, and testing
-* HTML/CSS/Bootstrap Frontend Implementation
-
-Milestone 2:
-* User authentication
-* Find Friends functionality
-* Search activities functionality
-* User Database
-* Repository Refactor 
-
-Final Project:
-* 
-*
-
-#### [Sylbi Bae]
+#### Sylbi Bae's contributions
 Milestone 1:
 * API design, implementation, and testing
 * HTML/CSS/Bootstrap Frontend Implementation
 
 Milestone 2:
 * Create new itinerary functionality
-* View itineraries functionality
+* View My Itineraries functionality
 * Itinerary Database
 
 Final Project:
-* Create New Itinerary, Edit Itinerary, My Itineraries fullstack functionality
-* Part 2: Offline Functionality
-* Part 3: Installable PWA 
-
-#### [Sean Turner]
-Milestone 1:
-* HTML/CSS/Bootstrap Frontend Implementation
-
-Milestone 2:
-* Activities database
-
-Final Project:
-* None
-
-
-#### Project Effort Contribution
-Milestone   | Kathryn | Sylbi | Sean
------------ | ------------- | ------------- | --------------
-Milestone 1 | 33%            | 33%            | 33%
-Milestone 2 | 45%            | 45%            | 10%
-Final       | 50%            | 50%            | 0%
------------ | ------------- | ------------- | --------------
-TOTAL:      | 128%      | 128%      | 43%
+* Create New Itinerary, Edit Itinerary, View My Itineraries fullstack functionality
+* Offline functionality
+* Installable PWA, favicon
