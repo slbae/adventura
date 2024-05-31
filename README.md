@@ -1,4 +1,5 @@
 # Adventura - Web Development Final Team Project
+Note: This application cannot be deployed solely through GitHub
 
 ## Problem Statement: 
 This installable progressive web application (PWA) is catered towards students and young adults on a budget who want to travel during breaks. They can plan a trip by creating itineraries, searching and favoriting activities for their destination, and adding collaborators to the trip planning. This app will be more student-friendly since traveling can sometimes be intimidating by yourself, especially if you haven’t traveled very often before. 
