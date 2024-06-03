@@ -1,6 +1,9 @@
 # Adventura - Web Development Final Team Project
 Note: This application cannot be deployed solely through GitHub
 
+## Mobile & Desktop Figma Wireframes
+View the entire wireframe at a high resolution here: https://www.figma.com/file/DMUdCdRXWjwbu4leiZnIJ2/Adventura?type=design&node-id=0%3A1&mode=design&t=RbDZga5hmWWE9EJH-1  
+
 ## Problem Statement: 
 This installable progressive web application (PWA) is catered towards students and young adults on a budget who want to travel during breaks. They can plan a trip by creating itineraries, searching and favoriting activities for their destination, and adding collaborators to the trip planning. This app will be more student-friendly since traveling can sometimes be intimidating by yourself, especially if you haven’t traveled very often before. 
 
@@ -44,9 +47,6 @@ This installable progressive web application (PWA) is catered towards students a
 * Supports desktop app functionality, which will give users easy access to their accounts
 * Desktop and mobile support offers flexibility for users with specific device preferences while traveling and planning in advance.
 * The ability to run on the web browser expands the user base since it is not dependent on a particular platform/device/operating system to run. We want to cater to a broad user base without any device constraints. 
-
-## Mobile & Desktop Figma Wireframes
-View the entire wireframe at a high resolution here: https://www.figma.com/file/DMUdCdRXWjwbu4leiZnIJ2/Adventura?type=design&node-id=0%3A1&mode=design&t=RbDZga5hmWWE9EJH-1  
 
 ## User Authentication/Authorization Processes 
 Authentication is handled via our JWT token middleware that works with cookies. The authentication process utilizes JSON Web Tokens for verifying user identities, checking for tokens in browser cookies or the Authorization header. Tokens are decoded using a secret key (API_SECRET) which allows us to extract user details, serving as the basis for authorization and ensuring only authorized access to our middleware protected routes. User data and session expiry information are securely stored within the JWT. The middleware denies access and returns a 401 status if no valid token is present, ensuring security. Our token generation function involves embedding user details and an expiration time into the JWT. Token invalidation is handled by setting the cookie's expiration to a past date. These security measures ensure controlled access to the application resources, maintaining user authentication and authorization integrity.
