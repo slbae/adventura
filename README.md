@@ -1,6 +1,9 @@
 # Adventura - Web Development Final Team Project
 Note: This application cannot be deployed solely through GitHub
 
+## DEMO VIDEO (1.5 min)
+https://drive.google.com/file/d/1Y8W_XyApvfbZghkwzA_6eNrrMD3226rX/view?usp=sharing 
+
 ## Mobile & Desktop Figma Wireframes
 View the entire wireframe at a high resolution here: https://www.figma.com/file/DMUdCdRXWjwbu4leiZnIJ2/Adventura?type=design&node-id=0%3A1&mode=design&t=RbDZga5hmWWE9EJH-1  
 
