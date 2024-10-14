@@ -1,5 +1,4 @@
 # Adventura - Web Development Final Team Project
-Note: This application cannot be deployed solely through GitHub
 
 ## DEMO VIDEO (1.5 min)
 https://drive.google.com/file/d/1Y8W_XyApvfbZghkwzA_6eNrrMD3226rX/view?usp=sharing 
